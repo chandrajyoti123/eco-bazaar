@@ -6,6 +6,7 @@ app.use(express.json())
 
 
 import dotenv from 'dotenv'
+
 dotenv.config();
 
 const PORT=5000
@@ -41,6 +42,41 @@ app.post('/user', async(req,res)=>{
          message:err.message
     })
   }
+
+
+})
+app.post('/loginuser', async(req,res)=>{
+  const {email,password}=req.body
+
+  if(!email || !password){
+    return res.json({
+        sucess:false,
+        message:"please enter email and password"
+    })
+  }
+
+  const loginuser=await User.findOne({
+    email:email,
+    password:password
+  }).select("address gender name,mobile")
+
+  if(!loginuser){
+    return res.json({
+      sucess:false,
+      message:"invalid credential"
+    })
+  }
+
+  res.json({
+    sucess:true,
+    user:loginuser,
+    message:"user find successfully"
+  })
+
+
+   
+
+     
 
 
 })
