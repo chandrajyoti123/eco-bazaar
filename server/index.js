@@ -141,6 +141,8 @@ app.put('/eco-prouductupdate/:_id',async(req,res)=>{
 
 })
 
+// -------delete product by id--------
+
 app.delete('/eco-productdelete/:_id', async(req,res)=>{
   const {_id}=req.params
   await Products.deleteOne({_id:_id})
@@ -151,6 +153,8 @@ app.delete('/eco-productdelete/:_id', async(req,res)=>{
 
 
 })
+
+// --------search product----------
 
 app.get('/searchproduct', async(req,res)=>{
   const {q}=req.query
