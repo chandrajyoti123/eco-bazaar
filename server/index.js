@@ -21,7 +21,7 @@ connectMongodb()
 app.post('/user', async(req,res)=>{
    const {name,email,password,mobile,address,gender}=req.body
    const NewUser=new User({
-    name,email,password,mobile,address,gender
+     name,email,password,mobile,address,gender
    })
   try{
     const saveduser=await NewUser.save()
