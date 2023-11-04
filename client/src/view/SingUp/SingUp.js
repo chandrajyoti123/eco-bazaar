@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./SignUp.css"
 import axios from "axios"
+import { Link } from 'react-router-dom'
 export default function SingUp() {
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
@@ -41,16 +42,14 @@ export default function SingUp() {
         gender:gender
         })
 
-        if (response?.data?.success==true) {
-            alert(response?.data?.message)
-            window.open(`/login`, 'blank')
+        if (response?.data?.user) {
+            window.location.href='/login'
+         console.log("tara")
+          
+        
 
-            setName('')
-            setEmail('')
-            setPassword('')
-            setMobile('')
-            setAddress('')
-        } else {
+        } 
+        else {
             alert(response?.data?.message)
         }
 
@@ -108,6 +107,8 @@ export default function SingUp() {
                 setGender('male')
             }}/>
         </div>
+
+        <Link to={'/login'} className='linktext'>already have an account?</Link>
         <button type='button' className='btn' onClick={singUpfuc}>Sinp Up</button>
 
     </div>
