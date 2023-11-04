@@ -33,8 +33,8 @@ useEffect(()=>{
 <div className='product-container'>
 {
   products.map((product,i)=>{
-    const {name,image,description,price,brand,category}=product
-    return   <ProductCard name={name} image={image} price={price} description={description}/>
+    const {name,image,description,price,brand,category,_id}=product
+    return   <ProductCard name={name} image={image} price={price} description={description} _id={_id}/>
 
   })
 }

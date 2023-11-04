@@ -17,6 +17,7 @@ const orderschema=new Schema({
     },
     shipping_address:{
         type:String,
+    
     },
     delivery_charges:{
         type:Number,
