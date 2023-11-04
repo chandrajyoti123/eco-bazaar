@@ -1,12 +1,24 @@
 import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
+import { useState,useEffect } from 'react'
 
 export default function Home() {
-    const play=()=>{
-    window.location.href='/singup'
+  const checkvalidity=()=>{
+    const response =JSON.parse(localStorage.getItem("user"))
+    if(response==null){
+        alert('you are not login yet ')
+        window.location.href='/login'
     }
+  
+
+}
+useEffect(()=>{
+    checkvalidity()
+},[])
   return (
     <div>
-      <h1 onClick={play}>this is Home page</h1>
+      <Navbar/>
+  <h1>this is product page</h1>
     </div>
   )
 }

@@ -1,0 +1,32 @@
+.navbar{
+    width: 100vw;
+    height: 60px;
+background-color: blue;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: white;
+}
+
+.navbar .logo span{
+    font-size: 30px;
+    margin-left: 20px;
+
+}
+.navbar ul{
+    display: flex;
+
+}
+.navbar ul li{
+    margin: 0 25px;
+    list-style: none;
+}
+.navlink{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+.navbar .user span{
+    margin-right: 40px;
+    font-size: 25px;
+}

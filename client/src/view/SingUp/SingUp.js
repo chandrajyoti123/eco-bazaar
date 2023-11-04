@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./SignUp.css"
 import axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link, json } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar'
 export default function SingUp() {
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
@@ -57,9 +58,23 @@ export default function SingUp() {
     }
 
 
+    const checkvalidity=()=>{
+        const response =JSON.parse(localStorage.getItem("user"))
+        if(response){
+            alert('you  have already logged in ')
+            window.location.href='/'
+        }
+      
+
+    }
+    useEffect(()=>{
+        checkvalidity()
+    },[])
+
+
   return (
     <div>
-      
+      <Navbar/>
     <div className='singup-form'>
     <div className='heading'>Sinp Up</div>
         <div className='input-field'>

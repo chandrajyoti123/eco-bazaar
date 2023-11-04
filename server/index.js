@@ -49,7 +49,8 @@ if(!email || !password){
 const loginuser=await User.findOne({
     email:email,
     password:password
-  }).select("address gender name,mobile")
+  })
+    // .select("address gender name mobile")
 if(!loginuser){
     return res.json({
       sucess:false,

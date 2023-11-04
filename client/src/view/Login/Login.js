@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import axios from "axios"
 import { Link, json } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar'
 
 export default function Login() {
   const [email,setEmail]=useState('')
@@ -39,9 +40,25 @@ export default function Login() {
   
 }
 
+const checkvalidity=()=>{
+  const response =JSON.parse(localStorage.getItem("user"))
+  if(response){
+      alert('you  have already logged in ')
+      window.location.href='/'
+  }
+
+
+}
+useEffect(()=>{
+  checkvalidity()
+},[])
+
+ 
+
   
   return (
-
+    <>
+<Navbar/>
         <div className='singup-form'>
         <div className='heading'>Login</div>
    
@@ -70,6 +87,7 @@ export default function Login() {
         <button type='button' className='btn' onClick={loginfunc} >login Up</button>
 
     </div>
+    </>
 
   )
 }
