@@ -1,6 +1,10 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import { useState,useEffect } from 'react'
+import ProductCard from '../../components/ProductCard/ProductCard'
+import axios from "axios"
+import './Home.css'
+
 
 export default function Home() {
   const checkvalidity=()=>{
@@ -8,17 +12,33 @@ export default function Home() {
     if(response==null){
         alert('you are not login yet ')
         window.location.href='/login'
-    }
-  
+      }
+}
 
+const [products,setProducts]=useState([])
+const loaddata=async()=>{
+  const response= await axios.get('/products')
+  setProducts(response?.data?.products)
+  
 }
 useEffect(()=>{
     checkvalidity()
+    loaddata()
 },[])
+ 
+
   return (
     <div>
       <Navbar/>
-  <h1>this is product page</h1>
+<div className='product-container'>
+{
+  products.map((product,i)=>{
+    const {name,image,description,price,brand,category}=product
+    return   <ProductCard name={name} image={image} price={price} description={description}/>
+
+  })
+}
+</div>
     </div>
   )
 }

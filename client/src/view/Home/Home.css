@@ -1,0 +1,9 @@
+.product-container{
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 60px 10%;
+gap: 60px;
+flex-wrap: wrap;
+
+}
