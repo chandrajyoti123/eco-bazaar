@@ -31,7 +31,7 @@ export default function Login() {
       console.log(response?.data?.message)
     localStorage.setItem("user",JSON.stringify(response.data.user))
 
-        window.location.href='/'
+        window.location.href='/myorder'
      } 
     else {
         alert(response?.data?.message)

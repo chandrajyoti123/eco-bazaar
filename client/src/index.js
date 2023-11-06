@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from './view/Login/Login';
 import Home from './view/Home/Home';
 import PlaceOrder from './view/PlaceOrder/PlaceOrder';
+import MyOrder from './view/MyOrder/MyOrder';
 
 const router=createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router=createBrowserRouter([
     {
         path:'/placeorder/:_id',
         element:<PlaceOrder/>
+    },
+    {
+        path:'/myorder',
+        element:<MyOrder/>
     },
 ])
 
