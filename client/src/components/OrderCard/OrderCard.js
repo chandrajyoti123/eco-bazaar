@@ -2,6 +2,12 @@ import React from 'react'
 import './OrderCard.css'
 
 export default function OrderCard({orderimg,ordname,quntity,price,shipping_address,delivery_charges,order_status}) {
+
+  const state_of_status={
+    pending:"status_danger",
+    shipped:"status_warning",
+    deliverd:"status_success"
+  }
   return (
 //     <div className='ordercard'>
 // <div className='orderchild1'>
@@ -42,9 +48,7 @@ export default function OrderCard({orderimg,ordname,quntity,price,shipping_addre
 
 </div>
 <div className='orderchild3'>
-    <div>{order_status}</div>
-
-
+<div className={state_of_status[order_status] }>{order_status}</div>
 </div>
       
     </div>

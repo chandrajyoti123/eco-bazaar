@@ -1,7 +1,8 @@
 .productcard{
-    width: 300px;
-height: 500px;
-box-shadow: 0 0 10px 2px black;
+    width: 360px;
+height: 520px;
+box-shadow: 0 0 10px 2px rgb(79, 77, 77);
+padding: 0 10px;
 }
 .product-img{
     width: 100%;
@@ -14,10 +15,22 @@ box-shadow: 0 0 10px 2px black;
     padding-left: 10px;
  
 }
-.product-body div{
+.product-name{
+    font-size: 35px;
+    color: rgb(9, 9, 141);
+    text-align: center;
+}
+
+.product-price{
+    font-size: 25px;
+    color: red;
+    margin: 10px 0;
+}
+.discription{
     font-size: 20px;
-    color: black;
-    margin: 20px 0 ;
-
-
+    color: rgb(9, 9, 63);
+}
+.buynow-btn{
+    width: 90% !important;
+    margin:  30px auto !important;
 }

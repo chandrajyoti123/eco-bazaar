@@ -51,19 +51,23 @@ const placeorderfunc= async()=>{
         product:_id,
         quantity:quantity,
         shipping_address:address,
-        delivery_charges:200,
-        status:"pending"
+        delivery_charges:delivery,
+        status:"shipped"
     }
     const response=await axios.post('/orders',obj)
     if(response?.data?.Order){
         alert(response?.data?.message)
-        window.location.href='/'
+        window.location.href='/myorder'
     }
     else{
         alert(response?.data?.message)
     }
      
 }
+
+// -------radio------------
+const [delivery,setDelivery]=useState('')
+console.log(delivery)
 
 
 
@@ -83,6 +87,14 @@ const placeorderfunc= async()=>{
             <span className='quntity'>{quantity}</span>
             <span  className='quntity-btn' onClick={incre_quantity}>+</span>
         </div> 
+        <div>
+            <div><label htmlFor='fatest'>Regular Delivery</label><input id='fatest' name='delivery_time'      onClick={()=>{
+              setDelivery(100)
+            }} value={100}  type='radio'/></div>
+            <div><label htmlFor='slowest'>Fatest Delivery</label><input id='slowest' name='delivery_time' value={50}   type='radio'       onClick={()=>{
+                setDelivery(50)
+            }}/></div>
+        </div>
         <input type='text' placeholder='enter your shipping address' className='address-field' value={address} onChange={(e)=>{
             setAddress(e.target.value)
         }}/>

@@ -12,6 +12,7 @@ export default function Navbar() {
      },[])
     const logoutfunc=()=>{
       localStorage.removeItem("user")
+      window.location.href='/login'
     }
     const loaduser=()=>{
       const response=JSON.parse(localStorage.getItem('user'))
@@ -23,14 +24,15 @@ export default function Navbar() {
   return (
     <div className='navbar'>
       <div className='logo'>
-      <span>eco-bazaar🛒</span>
+      <span>Eco-Bazaar🛒</span>
 
       </div>
       <ul>
-        <li><Link  className='navlink'  to={'/singup'}>singup</Link></li>
-        <li><Link  className='navlink' to={'/login'}>login</Link></li>
-        <li><Link  className='navlink' to={'/myorder'}>my order</Link></li>
-        <li><Link  className='navlink' to={'/'}>Home</Link></li>
+      <li><Link  className='navlink' to={'/'}>Home</Link></li>
+        <li><Link  className='navlink'  to={'/singup'}>Singup</Link></li>
+        <li><Link  className='navlink' to={'/login'}>Login</Link></li>
+        <li><Link  className='navlink' to={'/myorder'}>My Order</Link></li>
+        
       </ul>
       <div className='user'>
        <span>hello {user.name?user.name:"user"}</span>

@@ -62,10 +62,20 @@
     align-items: start;
     }
     .orderchild3 div{
-        background-color: green;
+        /* background-color: green; */
         display: inline-block;
         color: white;
         margin: 10px;
         font-size: 30px;
         padding: 5px;
+    }
+    .status_danger{
+        background-color: red;
+
+    }
+    .status_warning{
+        background-color: yellow !important;
+    }
+    .status_success{
+        background-color: green;
     }
