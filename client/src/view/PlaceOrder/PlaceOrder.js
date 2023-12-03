@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios"
 import './PlaceOrder.css'
+import Navbar from '../../components/Navbar/Navbar'
 
 
 export default function PlaceOrder() {
@@ -73,6 +74,8 @@ console.log(delivery)
 
 
   return (
+    <>
+<Navbar/>
     <div className='place-or-container'>
    <div className='place-or-child'>
     <img src={product?.image} className='placed-pr-img'/>
@@ -87,7 +90,7 @@ console.log(delivery)
             <span className='quntity'>{quantity}</span>
             <span  className='quntity-btn' onClick={incre_quantity}>+</span>
         </div> 
-        <div>
+        <div className='delivery'>
             <div><label htmlFor='fatest'>Regular Delivery</label><input id='fatest' name='delivery_time'      onClick={()=>{
               setDelivery(100)
             }} value={100}  type='radio'/></div>
@@ -104,5 +107,6 @@ console.log(delivery)
 
     </div> 
     </div>
+    </>
   )
 }

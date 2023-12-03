@@ -33,4 +33,5 @@ padding: 0 10px;
 .buynow-btn{
     width: 90% !important;
     margin:  30px auto !important;
+    text-decoration: none;
 }

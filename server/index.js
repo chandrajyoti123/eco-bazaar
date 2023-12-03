@@ -17,7 +17,7 @@ const connectMongodb = async () => {
         console.log("mongodb  added successfully")
     }
 }   
-connectMongodb()
+  connectMongodb()
 app.post('/user', async(req,res)=>{
    const {name,email,password,mobile,address,gender}=req.body
    const NewUser=new User({
@@ -206,18 +206,18 @@ app.get('/byuserid/:_id', async(req,res)=>{
 })
 
 // -------------update-status--------
-app.patch('/updateorder/:_id',async(req,res)=>{
-  const {_id}=req.params
-  const {status}=req.body
+// app.patch('/updateorder/:_id',async(req,res)=>{
+//   const {_id}=req.params
+//   const {status}=req.body
   
-   await Order.updateOne({_id:_id},{$set:{status:status}})
-  const updatedOrder= await Order.findOne({_id:_id})
-  res.json({
-    success:true,
-    order:updatedOrder,
-    message:"order updated successfully"
-  })
-})
+//    await Order.updateOne({_id:_id},{$set:{status:status}})
+//   const updatedOrder= await Order.findOne({_id:_id})
+//   res.json({
+//     success:true,
+//     order:updatedOrder,
+//     message:"order updated successfully"
+//   })
+// })
 app.listen(PORT,()=>{
     console.log(`server is running in port ${PORT}`)
 })
